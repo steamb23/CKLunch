@@ -5,9 +5,21 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>b3a46692-b569-4c6e-be6a-5a85a87e49b7</UserSecretsId>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PublishChromeDriver>true</PublishChromeDriver>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+        <PackageReference Include="Selenium.Support" Version="4.5.0" />
+        <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="106.0.5249.6100" />
         <PackageReference Include="SlackAPI" Version="1.1.14" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>

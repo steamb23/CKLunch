@@ -2,6 +2,11 @@
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+RUN apt update -y
+RUN apt install -y wget
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt install -y ./google-chrome-stable_current_amd64.deb
+RUN rm ./google-chrome-stable_current_amd64.deb
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
