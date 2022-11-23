@@ -76,6 +76,11 @@ public static class CafeteriaParser
 
     private static string ParseMenu(int column, int row)
     {
+        row += 1;
+        
+        // if layoutchanged
+        (column, row) = (row, column);
+        
         var option = new ChromeOptions();
         option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
         using IWebDriver driver = new ChromeDriver(option)
@@ -84,7 +89,7 @@ public static class CafeteriaParser
         };
 
         var td = driver.FindElement(
-            By.XPath($"/html/body/div[1]/div[3]/div[2]/div/div/table/tbody[2]/tr[{row + 1}]/td[{column}]"));
+            By.XPath($"/html/body/div[1]/div[3]/div[2]/div/div/table/tbody[2]/tr[{row}]/td[{column}]"));
 
         return td.Text;
     }
