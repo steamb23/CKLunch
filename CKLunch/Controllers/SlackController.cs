@@ -49,7 +49,6 @@ public class SlackController : ControllerBase
         return Task.FromResult<IActionResult>(Ok(new
         {
             response_type = "in_channel",
-            text = "잠시만 기다려주세요..."
         }));
     }
 
