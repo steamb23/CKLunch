@@ -82,7 +82,7 @@ public static class CafeteriaParser
         (column, row) = (row, column);
         
         var option = new ChromeOptions();
-        option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+        option.AddArguments("--headless", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
         using IWebDriver driver = new ChromeDriver(option)
         {
             Url = "https://www.ck.ac.kr/univ-life/menu"
