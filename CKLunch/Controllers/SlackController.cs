@@ -1,14 +1,10 @@
-﻿using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using SlackAPI;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace CKLunch.Controllers;
 
 [ApiController]
-[Microsoft.AspNetCore.Mvc.Route("slack")]
+[Route("slack")]
 public class SlackController : ControllerBase
 {
     private ILogger<SlackController> Logger { get; }
